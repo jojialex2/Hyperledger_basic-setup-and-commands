@@ -1,0 +1,222 @@
+ CORE_PEER_NETWORKID=hackathon
+cd fabric-samples-release/basic-network
+docker-compose -f docker-compose.yml up -d
+
+docker exec -it cli bash 
+
+export CORE_PEER_LOCALMSPID=Org1MSP
+export CORE_PEER_ADDRESS=peer0.org1.example.com:7051
+export CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp
+peer channel create -o orderer.example.com:7050 -c mychannel -f /etc/hyperledger/configtx/channel.tx
+
+
+peer channel join -b mychannel.block
+
+export CORE_PEER_ADDRESS=peer1.org1.example.com:7051
+peer channel join -b mychannel.block
+
+export CORE_PEER_ADDRESS=peer2.org1.example.com:7051
+peer channel join -b mychannel.block
+
+export CORE_PEER_ADDRESS=peer3.org1.example.com:7051
+peer channel join -b mychannel.block
+
+export CORE_PEER_ADDRESS=peer4.org1.example.com:7051
+peer channel join -b mychannel.block
+
+
+export CORE_PEER_ADDRESS=peer0.org1.example.com:7051
+peer chaincode install -n cudos05 -v 1.0 -p github.com/ProcessCredits
+
+export CORE_PEER_ADDRESS=peer1.org1.example.com:7051
+peer chaincode install -n cudos05 -v 1.0 -p github.com/ProcessCredits
+
+export CORE_PEER_ADDRESS=peer2.org1.example.com:7051
+peer chaincode install -n cudos05 -v 1.0 -p github.com/ProcessCredits
+
+export CORE_PEER_ADDRESS=peer3.org1.example.com:7051
+peer chaincode install -n cudos05 -v 1.0 -p github.com/ProcessCredits
+
+export CORE_PEER_ADDRESS=peer4.org1.example.com:7051
+peer chaincode install -n cudos05 -v 1.0 -p github.com/ProcessCredits
+
+
+export CORE_PEER_ADDRESS=peer0.org1.example.com:7051
+peer chaincode instantiate -o orderer.example.com:7050 -C mychannel -n cudos05 -v 1.0 -c '{"Args":[""]}' 
+
+
+
+
+
+
+export CORE_PEER_ADDRESS=peer0.org1.example.com:7051
+peer chaincode invoke -o orderer.example.com:7050 -C mychannel -n xpoorder1 -c '{"function":"initLedger","Args":[""]}'
+
+export CORE_PEER_ADDRESS=peer1.org1.example.com:7051
+peer chaincode invoke -o orderer.example.com:7050 -C mychannel -n xpoorder1 -c '{"function":"initLedger","Args":[""]}'
+
+export CORE_PEER_ADDRESS=peer2.org1.example.com:7051
+peer chaincode invoke -o orderer.example.com:7050 -C mychannel -n xpoorder1 -c '{"function":"initLedger","Args":[""]}'
+
+export CORE_PEER_ADDRESS=peer3.org1.example.com:7051
+peer chaincode invoke -o orderer.example.com:7050 -C mychannel -n xpoorder1 -c '{"function":"initLedger","Args":[""]}'
+
+export CORE_PEER_ADDRESS=peer4.org1.example.com:7051
+peer chaincode invoke -o orderer.example.com:7050 -C mychannel -n xpoorder1 -c '{"function":"initLedger","Args":[""]}'
+
+
+peer chaincode invoke -o orderer.example.com:7050 -C mychannel -n xpoorder1 -c '{"function":"createOrder","Args":["9feb6910-dcc6-11e7-8729-4f652b508748","order","Name"," "," "," "," ","12","45","YES","dvdf","dfdfd","Flatbed","Tarp Covering","12/12/2017"," "," ","1","Order Created","2017-12-09T15:22:10+05:30"]}'
+
+peer chaincode query -o orderer.xpologistics.com:7050 -C mychannel -n xpoorder1 -c '{"function":"getAllOrders","Args":[""]}'
+
+peer chaincode invoke -o orderer.example.com:7050 -C mychannel -n xpoorder1 -c '{"function":"initLedger","Args":[""]}'
+
+peer chaincode query -o orderer.example.com:7050 -C mychannel -n fabcar -c '{"function":"queryAllCars","Args":[""]}'
+
+docker exec -it peer0.org1.xpologistics.com bash
+
+["77e52720-dd53-11e7-9026-cd9f940c5d60","order","HOMEDEPOT ","XPO FREIGHT BROKER","PROGRESSIVE","XPO CARRIER","CHINA INC","24","54",'',"RICHMOND VA","RALEIGH NC","Single-Drop Deck","Tarp Covering","14/12/2017","","","1","Order Created","2017-12-10T08:10:22+05:30"]
+["77e52720-dd53-11e7-9026-cd9f940c5d61","order","WALLMRT ","XPO FREIGHT BROKER","PROGRESSIVE","XPO CARRIER","CHINA INC","52","74",''," Chicago IL","RALEIGH NC","Single-Drop Deck","Tarp Covering","16/12/2017","","","1","Order Created","2017-12-10T08:10:22+05:30"]
+
+docker exec -it peer0.org1.example.com bash
+
+export CORE_PEER_ADDRESS=peer0.org1.xpologistics.com:7051
+export CORE_PEER_LOCALMSPID=OrgXPO1MSP
+export CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.xpologistics.com/users/Admin@org1.xpologistics.com/msp
+
+peer channel create -o orderer.xpologistics.com:7050 -c xpologisticschannel -f /etc/hyperledger/configtx/xpologisticschannel.tx
+peer channel join -b xpologisticschannel.block
+
+export CORE_PEER_ADDRESS=peer0.org2.xpologistics.com:7051
+export CORE_PEER_LOCALMSPID=OrgXPO2MSP
+export CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.xpologistics.com/users/Admin@org2.xpologistics.com/msp
+
+peer channel join -b xpologisticschannel.block
+
+export CORE_PEER_ADDRESS=peer0.org3.xpologistics.com:7051
+export CORE_PEER_LOCALMSPID=OrgXPO3MSP
+export CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org3.xpologistics.com/users/Admin@org3.xpologistics.com/msp
+
+peer channel join -b xpologisticschannel.block
+
+export CORE_PEER_ADDRESS=peer0.org4.xpologistics.com:7051
+export CORE_PEER_LOCALMSPID=OrgXPO4MSP
+export CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org4.xpologistics.com/users/Admin@org4.xpologistics.com/msp
+
+peer channel join -b xpologisticschannel.block
+
+export CORE_PEER_ADDRESS=peer0.org5.xpologistics.com:7051
+export CORE_PEER_LOCALMSPID=OrgXPO5MSP
+export CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org5.xpologistics.com/users/Admin@org5.xpologistics.com/msp
+
+peer channel join -b xpologisticschannel.block
+
+//Deploy 
+Execute in all Peers
+
+export CORE_PEER_ADDRESS=peer0.org1.xpologistics.com:7051
+export CORE_PEER_LOCALMSPID=OrgXPO1MSP
+export CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.xpologistics.com/users/Admin@org1.xpologistics.com/msp
+
+peer chaincode install -n xpoorder6 -v 1.0 -p github.com/xpoorder
+
+export CORE_PEER_ADDRESS=peer0.org2.xpologistics.com:7051
+export CORE_PEER_LOCALMSPID=OrgXPO2MSP
+export CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.xpologistics.com/users/Admin@org2.xpologistics.com/msp
+
+peer chaincode install -n xpoorder6 -v 1.0 -p github.com/xpoorder
+
+
+export CORE_PEER_ADDRESS=peer0.org3.xpologistics.com:7051
+export CORE_PEER_LOCALMSPID=OrgXPO3MSP
+export CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org3.xpologistics.com/users/Admin@org3.xpologistics.com/msp
+
+peer chaincode install -n xpoorder6 -v 1.0 -p github.com/xpoorder
+
+export CORE_PEER_ADDRESS=peer0.org4.xpologistics.com:7051
+export CORE_PEER_LOCALMSPID=OrgXPO4MSP
+export CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org4.xpologistics.com/users/Admin@org4.xpologistics.com/msp
+
+peer chaincode install -n xpoorder6 -v 1.0 -p github.com/xpoorder
+
+export CORE_PEER_ADDRESS=peer0.org5.xpologistics.com:7051
+export CORE_PEER_LOCALMSPID=OrgXPO5MSP
+export CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org5.xpologistics.com/users/Admin@org5.xpologistics.com/msp
+
+peer chaincode install -n xpoorder6 -v 1.0 -p github.com/xpoorder
+
+
+Execute in any one pe
+export CORE_PEER_ADDRESS=peer0.org1.xpologistics.com:7051
+export CORE_PEER_LOCALMSPID=OrgXPO1MSP
+export CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.xpologistics.com/users/Admin@org1.xpologistics.com/msp
+
+peer chaincode instantiate -o orderer.xpologistics.com:7050 -C xpologisticschannel -n xpoorder6 -v 1.0 -c '{"Args":[""]}'
+
+
+peer chaincode invoke -o orderer.xpologistics.com:7050 -C xpologisticschannel -n xpoorder6 -c '{"function":"createOrder","Args":["9feb6910-dcc6-11e7-8729-4f652b508749","order","Name"," "," "," "," ","12","45","YES","dvdf","dfdfd","Flatbed","Tarp Covering","12/12/2017"," "," ","1","Order Created","2017-12-09T15:22:10+05:30"]}'
+
+
+peer chaincode invoke -o orderer.xpologistics.com:7050 -C xpologisticschannel -n xpoorder -c '{"function":"createOrder","Args":["9feb6910"]}'
+
+
+peer chaincode invoke -o orderer.xpologistics.com:7050 -C xpologisticschannel -n xpoorder -c '{"function":"changeCarOwner","Args":["CAR10", "Barry"]}'
+
+peer chaincode query -o orderer.xpologistics.com:7050 -C xpologisticschannel -n xpoorder6 -c '{"function":"getAllOrders","Args":[""]}'
+
+
+
+Select Type:	                         -   Truckload              LTL              Other 
+
+
+Transaction class
+    
+     TxId
+	 con_name
+	 broker
+	 shiper
+	 carior 
+	 insurer 
+	 status 
+	 
+	 
+	 
+Requester Information
+	Name
+	Company 
+	Email Address
+	Phone
+	Freight Description 
+
+Weight & Dimensions
+	Total Weight
+	Total Dimensions (L x W x H)
+	Hazardous
+Route Information
+	Origin
+	Zip / Postcode
+	Type of Location
+	Destination
+	Zip / Postcode
+	Type of Location
+Trailer Type
+	Flatbed
+	Single-Drop Deck (Stepdeck)
+	Double-Drop Deck
+	Detachable-Drop Deck (RGN, Lowboy)
+	Van
+	Reefer
+	Other  
+Service Options
+	Tarp Covering
+	Need Ramps
+	Declared Value USD
+Timeframe
+	Sheduled DateTime	
+	Ready for Pickup
+	Pick-Up No Later Than
+	Deliver No Later Than
+	
+	Status 
+	Sheduled DateTime 
+	
