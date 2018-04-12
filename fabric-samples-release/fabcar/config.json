@@ -1,0 +1,17 @@
+﻿{
+    "connectionString": "mongodb://10.68.214.60:27017/blockchain",
+    "apiUrl": "http://localhost:3000",
+    "secret": "REPLACE THIS WITH YOUR OWN SECRET, IT CAN BE ANY STRING",
+	"restAPIUrl" : "http://10.68.214.60:5000/chaincode",
+	"chaincodeID" : "2f095891529406b9779369b93666d3ffa7e6b2bb3dbc848ccd7fee0c2ae8ab77690ade829437566fce48f0b3baa1246d8010918d8d0a097202799571cf8efd0f",
+	"enrollID" : "binhn",
+	"blockchainEnable" :1,	
+	"blockchainMode" :"Rest",
+	"SC_ROLE_PC" : "Dashboard,ManageProjects,MP_CreateProjects,MP_ViewProjects",
+	"SC_ROLE_SCCD" : "Dashboard,ManageProjects,MP_CreateProjects,MP_ViewProjects,ManageCredits,MC_ViewTransactions,MC_ViewRedemRequests,MC_Policy,ManageUser,ViewUserRequest,ViewUsers",
+	"SC_ROLE_IN" : "Dashboard,ManageProjects,MP_ViewProjects,ManageCredits,MC_ViewTransactions,MC_TransferCredits,MC_ViewRedemRequests,MC_RedemCredits",
+	"SC_ROLE_RDP" : "ManageCredits,MC_ViewRedemRequests,Dashboard",
+	"SC_ROLE_NIN" : "ManageCredits,MC_ViewTransactions,MC_TransferCredits,MC_ViewRedemRequests,MC_RedemCredits,Dashboard",
+	"SC_ROLE_SA" :""
+}
+

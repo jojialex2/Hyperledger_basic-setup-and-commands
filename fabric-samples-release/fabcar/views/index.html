@@ -1,0 +1,107 @@
+<!--  © 2016 - 2017 Infosys Limited, Bangalore, India. All Rights Reserved. 
+Version:
+Except for any free or open source software components embedded in this Infosys proprietary software program ("Program"), 
+this Program is protected by copyright laws, international treaties and other pending or existing intellectual property rights in India, 
+the United States and other countries. Except as expressly permitted, any unauthorized reproduction, storage, transmission in any form 
+or by any means (including without limitation electronic, mechanical, printing, photocopying, recording or otherwise), or any distribution of this Program, 
+or any portion of it, may result in severe civil and criminal penalties, and will be prosecuted to the maximum extent possible under the law. -->
+
+<!DOCTYPE html>
+<!-- Application Name - app.js and Main controller - controller.js-->
+<html ng-app="rewardnomination">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Page title - directive.js -->
+    <title page-title>XPO Logistics</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+      <!-- Bootstrap -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Sliders-->
+    <link rel="stylesheet" href="assets/css/slider.css">
+    <!-- Fonts  -->
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+  
+    <!--  CSS Animations -->
+    <link href="assets/css/animate.css" rel="stylesheet">   
+    
+    <!--  CSS Main -->
+    <link href="assets/css/main.css" rel="stylesheet">   
+  	<!--  Loading icon -->
+  	<link href="assets/css/spinner.css" rel="stylesheet" type="text/css"> 
+  	<link href="assets/css/jquery-ui.css" rel="stylesheet" type="text/css"> 
+  	
+
+  
+</head>
+<!-- Current state name -->
+
+<body class="pace-done index" ng-cloak>
+    <!-- Page Wrapper-->
+    
+    <section id="main-wrapper" class="theme-default" >
+        <!-- Page wrapper -->
+        <header id="header" ng-include="'templates/common/header.html'"></header>
+        <!-- Left Sidebar Navigation 
+        <aside class="sidebar sidebar-left" ng-include="'templates/common/sidebar.html'" ng-show="authenticated"></aside>-->
+        <!-- Content wraper -->
+        <section class="main-content-wrapper" >
+            <!-- Main content view  -->
+             <div ng-include="'templates/common/tab.html'" ng-show="isTabEnabled"></div>
+            <div ng-view ></div> 
+                 
+        </section>      	
+        <!-- /Content wraper-->
+    </section>
+    
+    <!-- /Page wrapper-->   
+    <!-- jQuery -->
+    <script src="assets/lib/jquery.min.js"></script>
+    <script src="assets/lib/jQuery.navgoco.min.js"></script>
+    <script src="assets/lib/jquery.fullscreen-min.js"></script>
+   
+ 	
+ 	
+ 	<!-- jQuery export
+ 	 <script src="assets/lib/hopscotch.min.js"></script>
+    <script src="assets/lib/tableExport.js"></script> -->
+    <script src="assets/lib/jquery.base64.js"></script> 
+    <script src="assets/lib/jquery-ui.min.js"></script>
+   
+    
+     <!-- Angular -->
+    <script src="assets/lib/angular.min.js"></script>
+    <script src="assets/lib/angular-router.js"></script>
+    <script src="assets/lib/angular-ui-router.min.js"></script>
+    <script src="assets/lib/ui-bootstrap-tpls-2.2.0.min.js"></script>
+    <script src="assets/lib/angular-animate.min.js"></script>
+    <script src="assets/lib/angular-sanitize.js"></script>
+   <script src="assets/lib/moment.js"></script>
+    <script src="assets/lib/bootstrap.min.js"></script>       
+
+   
+    <!-- Angular Script -->
+    <script src="app/app.js"></script>    
+    <script src="app/common/directives.js"></script>
+    <script src="app/dashboard/dashboardController.js"></script>
+    <script src="app/consignee/consigneeController.js"></script>
+    <script src="app/Carrier/carrierController.js"></script>
+    <script src="app/Freight/freightController.js"></script>
+    <script src="app/Insurer/insurerController.js"></script>
+    <script src="app/shipping/shippingController.js"></script>
+    <script src="app/common/ajaxServices.js"></script>
+	<script src="app/common/dirPagination.js"></script>
+
+    <script src="connections.js"></script>
+    
+    
+	
+	<script src="app/common/commonServices.js"></script>
+	<script src="app/common/tabController.js"></script>
+	
+</body>
+</html>
