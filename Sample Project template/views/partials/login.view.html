@@ -1,0 +1,48 @@
+<div class="container-fluid" ng-cloak>
+	<div class="container">
+		<div class="col-md-9 col-sm-10 col-xs-12" ng-controller = "LoginController as vm">
+			<div class = "spinner" ng-if="vm.loading">
+				<md-progress-circular md-mode="indeterminate"></md-progress-circular>
+			</div>
+			<form method="post" name = "loginForm" ng-submit = "vm.login()" autocomplete="off" novalidate ng-if="!vm.loading">
+				<md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch class="login-container">
+					<md-card-title>
+						<md-card-title-text>
+							<div style = "text-align: center">
+								<div class="md-media-lg card-media" ng-cloak>
+									<i class = "material-icons" style = "font-size:150px; text-align: center;">account_box</i>
+								</div>
+								<label class="md-headline" style = "color: #163724;">Login</label>
+							</div>
+							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								<div class="row">
+									<md-input-container class="md-block ">
+										<label for="username">Username</label>			
+										<input type="text" name="username" id="username" ng-model = "vm.uname" ng-required="true" />
+										<div ng-messages="loginForm.username.$error" ng-show = "loginForm.username.$touched" role = "alert">							
+											<div class="error-messages" style = "color:red;"><ng-messages-include src="/views/partials/form-validation-messages.html"></ng-messages-include></div>
+										</div>
+									</md-input-container>
+								</div>
+							</div>
+							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								<div class="row">
+									<md-input-container class="md-block " md-no-float>
+										<label for="password">Password</label>
+										<input type="password" name="password" id="password" ng-model = "vm.pwd" ng-required="true" autocomplete = "new-password"/>
+										<div ng-messages="loginForm.password.$error" ng-show = "loginForm.password.$touched" role = "alert">
+											<div class="error-messages" style = "color:red;"><ng-messages-include src="/views/partials/form-validation-messages.html"></ng-messages-include></div>
+										</div>						
+									</md-input-container>
+								</div>
+							</div>
+							<div class="row" style = "text-align: center">
+								<md-button type="submit" class="md-raised md-primary" ng-disabled = "!vm.uname || !vm.pwd">Login</md-button>
+							</div>
+						</md-card-title-text>
+					</md-card-title>
+				</md-card>
+			</form>
+		</div>
+	</div>
+ </div>

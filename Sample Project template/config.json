@@ -1,0 +1,6 @@
+{
+	"connectionString": "mongodb://10.76.246.29:27017/Discover_VM",
+    "apiUrl": "http://localhost:3000",
+    "secret": "REPLACE THIS WITH YOUR OWN SECRET, IT CAN BE ANY STRING",
+	"blockchainEnable" :0
+}

@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html ng-app="loginApp">
+	<head>
+		<meta charset="utf-8" />
+		<title>Login</title>
+		<link rel="stylesheet" href="/lib/tether/dist/css/tether.min.css" />
+		<link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="/lib/angular-material/angular-material.min.css" />
+		<link rel="stylesheet" type="text/css"  href="/lib/material-design-icons/iconfont/material-icons.css" />
+		<link rel="stylesheet" type="text/css" href="/public/stylesheets/style.css" rel="stylesheet" />
+		<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+		<base href="/">
+	</head>
+	<body ng-cloak class="login-pg" ng-controller = "IndexController">
+		<md-toolbar class="md-primary header">
+			<div class="md-toolbar-tools">
+				<h3 class="md-flex">Discover's Multichain POC</h3>
+			</div>
+		</md-toolbar>
+		<div layout="column">
+			<ui-view></ui-view>
+		</div>
+		<!--<footer layout="column">
+			<div layout="row" layout-align="center center">
+				<h2>  </h2>
+			</div>
+		</footer>-->
+
+		<!-- external scripts -->
+		<script type = "text/javascript" src="/lib/jquery/dist/jquery.min.js"></script>
+		<script type = "text/javascript" src="/lib/tether/dist/js/tether.min.js"></script>
+		<script type = "text/javascript" src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script type = "text/javascript" src="/lib/angular/angular.min.js"></script>
+		<script type = "text/javascript" src="/lib/angular-animate/angular-animate.min.js"></script>
+		<script type = "text/javascript" src="/lib/angular-aria/angular-aria.min.js"></script>
+		<script type = "text/javascript" src="/lib/angular-messages/angular-messages.min.js"></script>
+		<script type = "text/javascript" src="/lib/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
+		<script type = "text/javascript" src="/lib/angular-material/angular-material.min.js"></script>
+
+		<!-- application scripts -->
+		<script type = "text/javascript" src="/public/javascripts/loginApp.js"></script>
+		<script type = "text/javascript" src="/public/javascripts/controllers/index.controller.js"></script>
+		<script type = "text/javascript" src="/public/javascripts/controllers/login.controller.js"></script>
+		<script type = "text/javascript" src="/public/javascripts/services/authentication.service.js"></script>
+	</body>
+</html>

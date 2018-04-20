@@ -1,0 +1,488 @@
+/* Font styles */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/lib/material-design-icons/iconfont/MaterialIcons-Regular.eot'); /* For IE6-8 */
+  src: local('Material Icons'),
+	local('MaterialIcons-Regular'),
+	url('/lib/material-design-icons/iconfont/MaterialIcons-Regular.woff2') format('woff2'),
+	url('/lib/material-design-icons/iconfont/MaterialIcons-Regular.woff') format('woff'),
+	url('/lib/material-design-icons/iconfont/MaterialIcons-Regular.ttf') format('truetype');
+}
+
+html {
+	background: #DCDCDC no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+body {
+  height: auto !important;
+  font: 14px Arial Regular;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  background:  #F3EFE0 no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.body{
+	position:fixed;
+	height: 100%;
+	-webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
+	filter: blur(5px);
+}
+
+.radio-style{
+	display: inline-block;
+	color: #457757;
+}
+
+.non-tab-container{
+	padding-top: 0px;
+}
+
+.non-tab-container > h3{
+	text-align:center; 
+	margin-top: 0px;
+	text-transform: uppercase;
+    text-shadow: 0 0 1px rgba(255,255,255,0.1);
+	letter-spacing: 1px;
+	font-weight: bold;
+}
+
+.tab-style{
+	border: 2px solid #EAE4CB !important;
+}
+
+.login-container{
+	background-color: #EAE4CB !important;
+	position:relative;
+	width: 60%;
+	padding-left: 30px;
+	padding-right: 30px;
+	margin-left: 35%;
+	margin-top: 5%;
+}
+
+.spinner-dialog{
+	padding: 10px; 
+	background-color: #303030;
+}
+
+.spinner-dialog p{
+	width: 200px; 
+	height: 50px; 
+	color: white; 
+	padding-left: 30px; 
+	padding-top: 22px;
+}
+
+.md-primary{
+	background-color: #48A770 !important;
+	color: white !important;
+}
+
+
+.header {
+	min-height: 40px; 
+	height: 40px; 
+	background-color: #F7F4EA !important;
+	color: #457757 !important;
+}
+
+footer {        
+    color: white;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background-color: rgb(33, 150 ,243);
+	min-height: 40px; 
+	height: 40px;
+}
+
+.md-container{
+	overflow: hidden !important;
+}
+.content {
+	margin-left: 20px; 
+	margin-right: 45px;
+}
+
+.text-left {
+	text-align: left;
+	padding-left: 8px;
+}
+
+.pull-right {
+	text-align: right !important;
+}
+
+.form-container {
+	position:relative;
+	width: 60%;
+	padding-left: 30px;
+	padding-right: 30px;
+	margin-left:35%;
+	margin-top: 5%;
+}
+
+.spinner {
+	position: absolute;
+	text-align: center;
+	margin: 30% 60%;
+}
+
+.tab-container {
+	position:relative;
+	width: 100%;
+	padding-left: 3%;
+	padding-right: 20%;
+}
+
+.stream-tab-container {
+	background-color: #F3EFE0 !important;
+	position:relative;
+	width: 100%;
+	padding-left: 3%;
+	padding-right: 3%;
+	margin-top: 0 !important;
+	margin-bottom: 50px !important;
+}
+
+.custom-md-content{
+	background-color: #F3EFE0 !important; 
+	color: #457757 !important;
+}
+
+.tabs-height {
+	min-height: 242px;
+	max-height: auto;
+}
+
+.sidenav-item {
+	padding: 15px;
+	margin: inherit;
+	cursor: pointer;
+	margin-left: 0px;
+	margin-right: 0px;
+	text-transform: uppercase;
+    text-shadow: 0 0 1px rgba(255,255,255,0.1);
+    letter-spacing: 1px;
+    font-weight: 400;
+}
+
+.sidenav-item > a {
+	text-decoration: none !important;
+	color: white;
+	font-weight: bold;
+	cursor: pointer;
+	text-transform: uppercase;
+    text-shadow: 0 0 1px rgba(255,255,255,0.1);
+	letter-spacing: 1px;
+	font-weight: 400;
+}
+
+.sidenav-item:hover  {
+	background-color: #3A865A;
+	box-shadow: inset 0 -1px rgba(0,0,0,0.2), inset 0 1px rgba(0,0,0,0.2);
+}
+
+.sidenav-item:hover > a {
+	background-color: #3A865A;
+	color: white !important;
+	font-weight: bold;
+	transition: background 0.3s, box-shadow 0.3s;
+	text-shadow: 0 0 1px rgba(255,255,255,0.1);
+}
+
+.sidenav-subitem {
+	padding: 15px;
+	margin: inherit;
+	cursor: pointer;
+	margin-left: 0px;
+	margin-right: 0px;
+	text-transform: uppercase;
+    text-shadow: 0 0 1px rgba(255,255,255,0.1);
+	letter-spacing: 1px;
+	font-weight: 200;
+}
+
+.sidenav-subitem > a {
+	text-decoration: none !important;
+	color: white;
+	font-weight: bold;
+	cursor: pointer;
+	text-transform: uppercase;
+    text-shadow: 0 0 1px rgba(255,255,255,0.1);
+	letter-spacing: 1px;
+	font-weight: 200;
+}
+
+.sidenav-subitem:hover > a {
+	color: #163724 !important;
+	font-weight: bold;
+}
+
+.active {
+	background-color:#3A865A;
+	color: white !important;
+	font-weight: bold;
+}
+
+.active > a {
+	background-color:#3A865A;
+	color: white !important;
+	font-weight: bold;
+	
+}
+
+.subitem-active {
+	color: #163724 !important;
+	font-weight: bold;
+}
+
+.subitem-active > a {
+	color: #163724 !important;
+	font-weight: bold;
+	
+}
+
+th, md-column {
+	color: #2B593E !important;
+	font-size: 13px !important;
+	font-weight: 200px !important;
+	
+}
+
+td, md-cell {
+	color:  #457757 !important;
+}
+
+.submenu{
+	background-color:#ECE5E5;
+	background-color:  rgba(255, 255, 255, 0.1)!important;
+	font-weight: 1px;;
+}
+
+md-toast {
+	position: fixed !important;
+}
+
+md-toast.md-error-toast-theme div.md-toast-content{
+	color: white !important;
+    background-color: red !important;
+}
+
+md-toast.md-success-toast-theme div.md-toast-content{
+    color: white !important;
+    background-color: #48A770 !important;
+}
+
+md-sidenav, 
+md-sidenav.md-locked-open, 
+md-sidenav.md-closed.md-locked-open-add-active {
+	display: relative;
+	width: auto !important;
+	max-width: 304px !important;
+	height: 439px !important;
+	margin: 10px 10px !important;
+	background-color: #48A770;
+} 
+
+.menudemoBasicUsage .md-menu-demo {
+  padding: 24px; }
+
+.menudemoBasicUsage .menu-demo-container {
+	min-height: 200px; 
+}
+
+md-pagination-wrapper {
+    width:auto !important;
+}
+
+#vertical-container{
+	height: 292px;
+	width: 100%;
+	max-width: 400px; 
+}
+  
+.repeated-item {
+	border-bottom: 1px solid #ddd;
+	box-sizing: border-box;
+	height: 40px;
+	padding-top: 10px; 
+}
+  
+  
+ md-virtual-repeat-container {
+	background-color: #F6EEEE;
+	box-shadow: 10px 10px 5px grey;
+}
+
+.virtual-repeat-header{
+	text-align:center; 
+	width: 100% ;
+	max-width: 400px;
+	height: 35px; 
+	padding-top:8px;
+	font-size: 17px;
+	background-color:#48A770 !important;
+	color: white !important;
+	box-shadow: 10px 0px 5px grey;
+	text-shadow: 0 0 1px rgba(255,255,255,0.1);
+	letter-spacing: 1px;
+	font-weight: bold;
+	
+}
+
+.virtual-repeat-body {
+	background-color: transparent;
+	text-shadow: 0 0 1px rgba(255,255,255,0.1);
+	letter-spacing: 1px;
+	font-weight: 200;
+}
+
+.md-virtual-repeat-container .md-virtual-repeat-offsetter div {
+	padding-left: 16px; 
+}
+
+.virtual-repeat-error-message{
+	color: #457757; 
+	font-size: 17px; 
+	font-weight: bold; 
+	padding-top: 15px !important;
+}
+
+input{
+	color: #457757 !important;
+}
+
+md-input-container.md-default-theme:not(.md-input-invalid).md-input-focused .md-input, 
+md-input-container:not(.md-input-invalid).md-input-focused .md-input, 
+md-input-container:not(.md-input-invalid).md-input-focused .md-select-value, 
+md-input-container.md-default-theme:not(.md-input-invalid).md-input-resized .md-input, 
+md-input-container:not(.md-input-invalid).md-input-resized .md-input {
+	border-color:  #457757 !important;
+}
+
+.md-select-value>span:not(.md-select-icon) .md-text{color:#48A770;}
+
+md-input-container .md-placeholder, 
+md-input-container.md-input-focused 	 label:not(.md-no-float):not(.md-container-ignore),
+md-input-container.md-input-has-value label:not(.md-no-float){
+	color: #457757 !important;
+}
+
+md-input-container>md-select {
+    margin: 0;
+    -webkit-box-ordinal-group: 3;
+    -webkit-order: 2;
+	order: 2;
+	border-color: #457757 !important;
+}
+  
+md-input-container.md-input-focused:not([md-no-float]) .md-select-placeholder span:first-child {
+	-webkit-transform: translateY(-22px) translateX(-2px) scale(0.75);
+	transform: translateY(-22px) translateX(-2px) scale(0.75); 
+	color: #457757 !important;
+}
+
+md-option {
+	color: #457757 !important;
+    cursor: pointer;
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    width: auto;
+    -webkit-transition: background .15s linear;
+    transition: background .15s linear;
+    padding: 0 16px;
+    height: 48px;
+}
+
+md-menu-item {
+	color:  #457757 !important;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    min-height: 48px;
+    height: 48px;
+    -webkit-align-content: center;
+    align-content: center;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+}
+
+.md-button.md-default-theme.md-fab[disabled], .md-button.md-fab[disabled], .md-button.md-default-theme.md-raised[disabled], .md-button.md-raised[disabled] {
+	background-color: rgba(0,0,0,0.12) !important;
+}
+
+md-nav-bar.md-default-theme md-nav-ink-bar, md-nav-bar md-nav-ink-bar {
+	color: #345B42;
+	background: #345B42;
+}
+
+md-radio-button.md-default-theme.md-checked .md-off, md-radio-button.md-checked .md-off {
+	border-color:rgba(72, 167, 112, 0.87);
+}
+
+md-radio-button.md-default-theme .md-on, md-radio-button .md-on {
+	background-color:rgba(72, 167, 112, 0.87);
+}
+
+md-checkbox.md-default-theme.md-checked .md-icon, md-checkbox.md-checked .md-icon {
+	background-color: rgba(72, 167, 112, 0.87);
+}
+
+.md-checkbox-enabled.md-default-theme[selected] .md-icon, .md-checkbox-enabled[selected] .md-icon {
+    background-color: rgba(72, 167, 112, 0.87);
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  
+	/* Put your IE-only styles here. Works for IS 10 & IE 11*/
+
+	md-sidenav, 
+	md-sidenav.md-locked-open, 
+	md-sidenav.md-closed.md-locked-open-add-active {
+		display: relative;
+		min-width: 200px !important;
+		width: 300px !important;
+		max-width: 304px !important;
+		height: 450px !important;
+		margin: 10px 10px !important;
+		background-color: #48A770;
+	} 
+
+	.md-padding {
+		padding: 0px !important;
+	}
+
+	.spinner-dialog{
+		min-width: 300px;
+		padding: 10px; 
+		background-color: #303030;
+	}
+
+
+ }
+
+	
